@@ -3,8 +3,10 @@
     <a class="brand-link w-nav-brand" href="index.html"><h1 class="brand-text">Litereaction auth</h1></a>
     <nav class="navigation-menu w-nav-menu" role="navigation">
       <a class="navigation-link w-nav-link" routerLink="home">Home</a>
-      <a class="navigation-link w-nav-link" routerLink="join">Join Up</a>
-      <a class="navigation-link w-nav-link" routerLink="login">Login</a>
+      <a *ngIf="isLoggedIn" class="navigation-link w-nav-link">{{ user_displayName }}</a>
+      <a *ngIf="isLoggedIn" class="navigation-link w-nav-link" (click)="authService.logout()">Logout</a>
+      <a *ngIf="!isLoggedIn" class="navigation-link w-nav-link" routerLink="join">Join Up</a>
+      <a *ngIf="!isLoggedIn" class="navigation-link w-nav-link" routerLink="login">Login</a>
     </nav>
     <div class="hamburger-button w-nav-button">
       <div class="w-icon-nav-menu"></div>
