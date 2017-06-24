@@ -13,21 +13,7 @@ export class AppComponent {
   user_displayName: String;
   user_email: String;
 
-  constructor(public authService: AuthService, private router: Router) {
-    this.authService.af.auth.onAuthStateChanged(
-      (auth) => {
-        if (auth == null) {
-          this.isLoggedIn = false;
-          this.user_displayName = '';
-          this.user_email = '';
-          this.router.navigate(['login']);
-        } else {
-          this.isLoggedIn = true;
-          this.user_displayName = auth.displayName;
-          this.user_email = auth.email;
-          this.router.navigate(['']);
-        }
-      }
-    );
+  constructor(public authService: AuthService) {
+
   }
 }

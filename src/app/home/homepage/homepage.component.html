@@ -1,10 +1,11 @@
 <div class="centered hero-section">
   <div class="w-container">
-    <h1 class="hero-heading">Auth0 demo</h1>
-    <div class="hero-subheading">facebook and traditional auth demo by litereaction</div>
+    <h1 class="hero-heading">Auth demo</h1>
+    <div class="hero-subheading">facebook and traditional auth demo using firebase</div>
     <div>
-      <a *ngIf="!authService.isAuthenticated()" class="button" routerLink="home">sign up</a>
-      <a class="hollow-button" routerLink="login">login</a>
+      <a *ngIf="!authService.isLoggedIn" class="button" routerLink="home">sign up</a>
+      <a *ngIf="!authService.isLoggedIn" class="hollow-button" routerLink="login">login</a>
+      <p *ngIf="authService.isLoggedIn">Hello {{ authService.user_displayName }}, <br>{{ authService.user_email }}</p>
     </div>
   </div>
 </div>

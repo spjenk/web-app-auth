@@ -3,10 +3,10 @@
     <a class="brand-link w-nav-brand" href="index.html"><h1 class="brand-text">Litereaction auth</h1></a>
     <nav class="navigation-menu w-nav-menu" role="navigation">
       <a class="navigation-link w-nav-link" routerLink="home">Home</a>
-      <a *ngIf="isLoggedIn" class="navigation-link w-nav-link">{{ user_displayName }}</a>
-      <a *ngIf="isLoggedIn" class="navigation-link w-nav-link" (click)="authService.logout()">Logout</a>
-      <a *ngIf="!isLoggedIn" class="navigation-link w-nav-link" routerLink="join">Join Up</a>
-      <a *ngIf="!isLoggedIn" class="navigation-link w-nav-link" routerLink="login">Login</a>
+      <a *ngIf="authService.isLoggedIn" class="navigation-link w-nav-link">{{ authService.user_displayName }}</a>
+      <a *ngIf="authService.isLoggedIn" class="navigation-link w-nav-link" (click)="authService.logout()">Logout</a>
+      <a *ngIf="!authService.isLoggedIn" class="navigation-link w-nav-link" routerLink="join">Join Up</a>
+      <a *ngIf="!authService.isLoggedIn" class="navigation-link w-nav-link" routerLink="login">Login</a>
     </nav>
     <div class="hamburger-button w-nav-button">
       <div class="w-icon-nav-menu"></div>
@@ -24,13 +24,16 @@
         <p>blah blah blah</p>
       </div>
       <div class="spc w-col w-col-4">
-        <h5>useful links</h5><a class="footer-link" href="#">Phasellus gravida semper nisi</a><a class="footer-link" href="#">Suspendisse nisl elit</a><a class="footer-link" href="#">Dellentesque habitant morbi</a>
+        <h5>useful links</h5>
+        <a class="footer-link" href="https://firebase.google.com">Firebase</a>
+        <a class="footer-link" href="https://github.com/angular/angularfire2">Angularfire2</a>
+        <a class="footer-link" href="https://github.com/spjenk/web-app-auth">Source code</a>
       </div>
       <div class="w-col w-col-4">
         <h5>social</h5>
-        <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="assets/images/social-18.svg" width="20"><a class="footer-link with-icon" href="#">Twitter</a>
+        <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="assets/images/social-18.svg" width="20"><a class="footer-link with-icon" href="">Twitter</a>
         </div>
-        <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="assets/images/social-03.svg" width="20"><a class="footer-link with-icon" href="#">Facebook</a>
+        <div class="footer-link-wrapper w-clearfix"><img class="info-icon" src="assets/images/social-03.svg" width="20"><a class="footer-link with-icon" href="https://facebook.com">Facebook</a>
         </div>
       </div>
     </div>
