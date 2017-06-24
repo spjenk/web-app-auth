@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {JoinComponent} from "./join/join.component";
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: JoinComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
